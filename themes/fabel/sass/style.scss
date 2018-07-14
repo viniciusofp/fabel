@@ -42,7 +42,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	## Captions
 	## Galleries
 --------------------------------------------------------------*/
-@import url('https://fonts.googleapis.com/css?family=Nunito:300,400,600');
+@import url('https://fonts.googleapis.com/css?family=Nunito:300,400,800');
 $font-family-sans-serif: 'Nunito';
 $red: #960014;
 $primary: $red;
@@ -55,6 +55,32 @@ body {
 	font-size: 15px;
 	color: #666;
 }
+a {
+	transition: .3s;
+}
 a:hover {
 	text-decoration: none;
+}
+
+.wpcf7-form-control.wpcf7-submit {
+	@extend .btn;
+	@extend .btn-primary;
+}
+
+.wpcf7 label {
+	width: 100%;
+	color: $red;
+}
+.wpcf7 form {
+	width: 100%;
+	max-width: 500px;
+	padding-top: 30px;
+
+}
+
+.wpcf7-form-control {
+	@extend .form-control;
+	background: #ececec;
+	border: 0;
+	margin-top: 10px;
 }

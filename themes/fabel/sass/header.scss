@@ -22,9 +22,9 @@
 		display: inline-block;
 		border-top: 1px solid darken($red, 2%);
 		border-bottom: 1px solid darken($red, 2%);
+		box-shadow: inset 0px 0px 0px 0px darken($red, 5%);
 		&:hover {
-			background: darken($red, 5%);
-
+			box-shadow: inset 0px 57px 0px 0px darken($red, 5%);
 		}
 	}
 	.menu-header-principal-container {
@@ -54,9 +54,9 @@
 		width: 100%;
 		padding: 10px;
 		display: inline-block;
+		box-shadow: inset 0px 0px 0px 0px darken(#444, 5%);
 		&:hover {
-			background: darken(#444, 5%);
-
+			box-shadow: inset 0px -41px 0px 0px darken(#444, 5%);
 		}
 	}
 	.menu-header-superior-container {
