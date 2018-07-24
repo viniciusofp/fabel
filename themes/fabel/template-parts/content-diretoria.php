@@ -18,7 +18,7 @@
 				<img class="img-fluid" src="<?php  echo get_sub_field('foto')['url'];?>" alt="">
 			</div>
 			<div class="col-8 col-md-9">
-				<h3><?php  the_sub_field('nome');?></h3>
+				<h2><?php  the_sub_field('nome');?></h2>
 				<p class="cargo"><?php  the_sub_field('cargo');?></p>
 				<div class="descricao">
 					<?php  the_sub_field('descricao');?>

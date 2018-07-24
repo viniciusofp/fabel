@@ -34,6 +34,10 @@ get_header(); ?>
 					<?php 
 					if ($post->post_name == 'diretoria' || $post->post_name == 'assessoria-pedagogica' ): ?>
 						<?php get_template_part( 'template-parts/content', 'diretoria' ); ?>
+					<?php elseif  ($post->post_name == 'graduacao' ): ?>
+						<?php get_template_part( 'template-parts/content', 'cursos' ); ?>
+					<?php elseif  ($post->post_name == 'avaliacao-institucional' ): ?>
+						<?php get_template_part( 'template-parts/content', 'avaliacao-institucional' ); ?>
 					<?php else: ?>
 						<?php get_template_part( 'template-parts/content' ); ?>
 					<?php endif ?>

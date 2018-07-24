@@ -17,12 +17,19 @@
 .the-page {
 	h1 {
 		color: $red;
-		font-weight: 600;
+		font-weight: 800;
 	}
-	h3	{
+	h2	{
 		color: $red;
 		font-weight: 800;
 		font-size: 1.5rem;
+		margin-top: 15px;
+		margin-bottom: 15px;
+	}
+	h3	{
+		color: $dark-blue;
+		font-weight: 800;
+		font-size: 1.2rem;
 		margin-top: 15px;
 		margin-bottom: 15px;
 	}
@@ -75,5 +82,54 @@
 	}
 	strong {
 		color: black;
+	}
+}
+
+// Cursos
+.card-header {
+	border: none;
+}
+
+.semestres {
+	border: 1px solid #dedede;
+	h4 {
+		display: inline-block;
+		color: $red;
+		font-size: 1rem;
+		font-weight: 800;
+		border-bottom: 2px solid $red;
+		padding-bottom: 5px;
+		i {
+			font-size: .6rem;
+			transform: translateY(-5px);
+		}
+	}
+	ul {
+		padding-left: 0;
+		margin-left: 0;
+		li {
+			font-size: 14px;
+			padding: 8px;
+			margin-left: 0;
+			list-style: none;
+			border-bottom: 1px solid #dedede;
+			&:hover {
+				background: #00000015;
+			}
+			color: $black;
+			i {
+				color: $red;
+			}
+		}
+	}
+}
+
+.semestre {
+	padding: 15px 15px 5px;
+	&:nth-of-type(odd) {
+		background: #f0f0f0;
+	}
+	&:nth-of-type(even) {
+		background: #fefefe;
 	}
 }
