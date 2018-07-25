@@ -55,6 +55,9 @@ $primary: $red;
 @import 'sidebar';
 @import 'page';
 @import 'blog';
+* {
+	max-width: 100%;
+}
 body {
 	font-size: 15px;
 	color: #666;

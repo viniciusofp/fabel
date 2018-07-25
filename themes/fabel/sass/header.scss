@@ -11,6 +11,12 @@
 		transform: translate(-50%, -50%);
 	}
 }
+@media all and (max-width: 767px) {
+	.header-image img {
+		width: 260px;
+		height: auto;
+	}
+}
 #header-main {
 	background: $red;
 	a {
@@ -46,7 +52,7 @@
 }
 #header-superior {
 	text-align: right;
-	background: #444;
+	background: #242424;
 	border-bottom: 1px solid #252525;
 	a {
 		font-weight: 300;
@@ -55,9 +61,9 @@
 		width: 100%;
 		padding: 10px;
 		display: inline-block;
-		box-shadow: inset 0px 0px 0px 0px darken(#444, 5%);
+		box-shadow: inset 0px 0px 0px 0px #252525;
 		&:hover {
-			box-shadow: inset 0px -41px 0px 0px darken(#444, 5%);
+			box-shadow: inset 0px -41px 0px 0px $red;
 		}
 	}
 	.menu-header-superior-container {
