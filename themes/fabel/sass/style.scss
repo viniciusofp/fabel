@@ -48,6 +48,7 @@ $red: #960014;
 $dark-blue: #013263;
 $primary: $red;
 @import "bootstrap/bootstrap";
+@import "animate";
 @import 'header';
 @import 'footer';
 @import 'sidebar';
@@ -61,6 +62,10 @@ a {
 }
 a:hover {
 	text-decoration: none;
+}
+
+.btn-light {
+	border: 1px solid $red;
 }
 
 .wpcf7-form-control.wpcf7-submit {

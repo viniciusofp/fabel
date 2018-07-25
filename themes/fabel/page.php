@@ -14,9 +14,9 @@
 
 get_header(); ?>
 
-<div class="container mt-5">
+<div class="container mt-3">
 	<div class="row">
-		<div class="col-12 breadcrumbs mb-5">
+		<div class="col-12 breadcrumbs mb-3">
 			<div id="breadcrumb"></div>
 		</div>
 		<div class="col-12 col-md-4 col-lg-3">
@@ -34,13 +34,22 @@ get_header(); ?>
 					<?php 
 					if ($post->post_name == 'diretoria' || $post->post_name == 'assessoria-pedagogica' ): ?>
 						<?php get_template_part( 'template-parts/content', 'diretoria' ); ?>
-					<?php elseif  ($post->post_name == 'graduacao' ): ?>
+					<?php elseif  ($post->post_name == 'graduacao' || $post->post_name == 'pos-graduacao' ): ?>
 						<?php get_template_part( 'template-parts/content', 'cursos' ); ?>
 					<?php elseif  ($post->post_name == 'avaliacao-institucional' ): ?>
 						<?php get_template_part( 'template-parts/content', 'avaliacao-institucional' ); ?>
 					<?php else: ?>
 						<?php get_template_part( 'template-parts/content' ); ?>
 					<?php endif ?>
+					<?php
+					// Galeria
+					$galeria = get_field('galeria');
+					if ($galeria): ?>
+						<?php get_template_part( 'template-parts/content', 'galeria' ); ?>
+					<?php endif ?>
+
+
+
 				</div>
 			<?php endwhile; ?>
 		</div>
