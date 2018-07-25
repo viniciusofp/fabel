@@ -112,11 +112,10 @@
     </div>
     <div id="<?php echo $slug ?>" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
       <div class="card-body">
-      	<a href="<?php echo $link ?>" target="_blank"><h3>Visitar página do curso '<?php echo $nome; ?>'</h3></a>
+      	<a href="<?php echo $link ?>" target="_blank"><button class="btn-primary btn">Visitar página do curso <strong><?php echo $nome; ?></strong></button></a>
         
 
 				<?php 
-				$informacoes_adicionais = get_sub_field('informacoes_adicionais');
 				if ($informacoes_adicionais) :?>
 				<h3 class="mt-4">Informações Adicionais</h3>
 				<?php echo $informacoes_adicionais ?>

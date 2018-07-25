@@ -31,6 +31,8 @@ get_header(); ?>
 
 				
 				<div class="the-page">
+
+					<!-- Conteúdo -->
 					<?php 
 					if ($post->post_name == 'diretoria' || $post->post_name == 'assessoria-pedagogica' ): ?>
 						<?php get_template_part( 'template-parts/content', 'diretoria' ); ?>
@@ -41,11 +43,23 @@ get_header(); ?>
 					<?php else: ?>
 						<?php get_template_part( 'template-parts/content' ); ?>
 					<?php endif ?>
-					<?php
-					// Galeria
-					$galeria = get_field('galeria');
+
+					<!-- Galeria de Imagens -->
+					<?php $galeria = get_field('galeria');
 					if ($galeria): ?>
 						<?php get_template_part( 'template-parts/content', 'galeria' ); ?>
+					<?php endif ?>
+
+					<!-- Portarias -->
+					<?php
+					if ($post->post_name == 'enade' ): ?>
+						<?php get_template_part( 'template-parts/content', 'portarias-enade' ); ?>
+					<?php endif ?>
+
+					<!-- Projetos -->
+					<?php
+					if ($post->post_name == 'responsabilidade-social' ): ?>
+						<?php get_template_part( 'template-parts/content', 'projetos' ); ?>
 					<?php endif ?>
 
 

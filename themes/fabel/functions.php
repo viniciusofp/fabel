@@ -47,6 +47,7 @@ if ( ! function_exists( 'fabel_setup' ) ) :
 			'fabel' => esc_html__( 'A Fabel' ),
 			'cursos' => esc_html__( 'Cursos' ),
 			'servicos' => esc_html__( 'Serviços' ),
+			'outros' => esc_html__( 'Outros' ),
 			'processo-seletivo' => esc_html__( 'Processo Seletivo' ),
 			'portal-academico' => esc_html__( 'Portal Acadêmico' ),
 			'header-main' => esc_html__( 'Menu Header - Principal' ),
@@ -175,6 +176,14 @@ require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/social-media-widget.php';
 
 /**
+ * Pagination
+ */
+require get_template_directory() . '/inc/pagination.php';
+
+// Register Custom Navigation Walker
+require_once get_template_directory() . '/inc/class-wp-bootstrap-navwalker.php';
+
+/**
  * Load Jetpack compatibility file.
  */
 if ( defined( 'JETPACK__VERSION' ) ) {
@@ -203,3 +212,17 @@ function slugify($string, $replace = array(), $delimiter = '_') {
   setlocale(LC_ALL, $oldLocale);
   return $clean;
 }
+
+// Trim excerpt
+
+function custom_short_excerpt($excerpt){
+	$limit = 60;
+
+	if (strlen($excerpt) > $limit) {
+		return substr($excerpt, 0, strpos($excerpt, ' ', $limit));
+	}
+
+	return $excerpt;
+}
+
+add_filter('the_excerpt', 'custom_short_excerpt');

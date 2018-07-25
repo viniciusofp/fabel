@@ -43,7 +43,7 @@
 					<?php wp_nav_menu( array( 'theme_location' => 'portal-academico' ) ); ?>
 				</div>
 				<div class="col-6 col-sm-6 col-md-4 col-lg-2">
-					<h5>Blog</h5>
+					<?php wp_nav_menu( array( 'theme_location' => 'outros' ) ); ?>
 				</div>
 			</div>
 		</div>

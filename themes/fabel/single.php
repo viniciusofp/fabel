@@ -13,30 +13,62 @@
  */
 
 get_header(); ?>
+<?php while ( have_posts() ) : the_post(); ?>
 
-<div class="container mt-5">
+<?php if (has_post_thumbnail()): ?>
+<div class="post-img-header mb-3" style="background-image: url('<?php the_post_thumbnail_url('full') ?>')"></div>
+<?php endif ?>
+
+<div class="container">
 	<div class="row">
-		<div class="col-12 col-md-4 col-lg-3">
-			<div class="section-menu">
-				<div class="bread-title d-none"><?php the_title(); ?></div>
-				<div class="bread-home d-none"><a href="<?php echo home_url('/'); ?>">Início</a></div>
-				<?php get_sidebar(); ?>
-			</div>
-		</div>
-		<div class="col-12 col-md-8 col-lg-9 mb-5">
-			<?php while ( have_posts() ) : the_post(); ?>
+
+		<div class="col-12 col-md-8 col-xl-9">
 
 				
-				<div class="the-page">
-					<?php 
-					if ($post->post_name == 'diretoria' || $post->post_name == 'assessoria-pedagogica' ): ?>
-						<?php get_template_part( 'template-parts/content', 'diretoria' ); ?>
-					<?php else: ?>
-						<?php get_template_part( 'template-parts/content' ); ?>
+				<div class="the-page mt-5 mb-5">
+					<h1><?php the_title(); ?></h1>
+					<ul class="list-inline share-menu">
+						<li class="list-inline-item">
+							<a href=""><i class="fab fa-facebook-f"></i>
+							</a>
+						</li>
+						<li class="list-inline-item">
+							<a href=""><i class="fab fa-twitter"></i>
+							</a>
+						</li>
+					</ul>
+					<?php the_content() ?>
+
+					<!-- Galeria de Imagens -->
+					<?php $galeria = get_field('galeria');
+					if ($galeria): ?>
+						<?php get_template_part( 'template-parts/content', 'galeria' ); ?>
 					<?php endif ?>
 				</div>
-			<?php endwhile; ?>
+		</div>
+		<div class="col-12 col-md-4 col-xl-3 mt-5 the-page">
+			<h3>Notícias Recentes</h3>
+		<?php 
+		$args = array(
+			'post_type' => 'post',
+		  'posts_per_page' => 3,
+		);
+		$the_query = new WP_Query( $args ); 
+		if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+			<div class="blog-item">
+				<?php if (has_post_thumbnail()): ?>
+				<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('thumbnail'); ?></a>
+				<?php else : ?>
+				<a href="<?php the_permalink(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/img/default_thumbnail.jpg" alt=""></a>
+				<?php endif ?>
+				<div class="meta">
+					<a href="<?php the_permalink(); ?>"><h2 class="title"><?php the_title(); ?></h2></a>
+					<p><?php the_excerpt(); ?> - <strong><a href="<?php the_permalink(); ?>">Leia Mais</a></strong></p>
+				</div>
+			</div>
+		<?php endwhile; endif; ?>
 		</div>
 	</div>
 </div>
+<?php endwhile; ?>
 <?php get_footer();
