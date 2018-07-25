@@ -19,14 +19,14 @@ get_header(); ?>
 		<div class="col-12 breadcrumbs mb-3">
 			<div id="breadcrumb"></div>
 		</div>
-		<div class="col-12 col-md-4 col-lg-3">
+		<div class="col-12 col-md-4 col-lg-3 order-2 order-md-1">
 			<div class="section-menu">
 				<div class="bread-title d-none"><?php the_title(); ?></div>
 				<div class="bread-home d-none"><a href="<?php echo home_url('/'); ?>">Início</a></div>
 				<?php get_sidebar(); ?>
 			</div>
 		</div>
-		<div class="col-12 col-md-8 col-lg-9 mb-5">
+		<div class="col-12 col-md-8 col-lg-9 mb-5 order-1 order-md-2">
 			<?php while ( have_posts() ) : the_post(); ?>
 
 				

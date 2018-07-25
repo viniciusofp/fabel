@@ -22,7 +22,7 @@ get_header(); ?>
 <div class="container">
 	<div class="row">
 
-		<div class="col-12 col-md-8 col-xl-9">
+		<div class="col-12 col-md-8 col-xl-9 ">
 
 				
 				<div class="the-page mt-5 mb-5">
