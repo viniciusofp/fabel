@@ -60,8 +60,33 @@
 <div class="header-image" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/header-bg.jpg')">
 	<a href="<?php echo home_url('/') ?>"><img src="<?php echo get_template_directory_uri(); ?>/img/header-logo.png" alt=""></a>
 </div>
-<nav id="header-main">
+<!-- <nav id="header-main">
 	<?php wp_nav_menu( array( 'theme_location' => 'header-main' ) ); ?>
+</nav> -->
+
+<nav class="navbar navbar-expand-md navbar-dark navwalker-main container-fluid" role="navigation">
+  <div class="container">
+	<!-- Brand and toggle get grouped for better mobile display -->
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<?php 
+	wp_nav_menu( array(
+		'theme_location'  => 'header-main',
+		'depth'	          => 2, // 1 = no dropdowns, 2 = with dropdowns.
+		'container'       => 'div',
+		'container_class' => 'collapse navbar-collapse',
+		'container_id'    => 'bs-example-navbar-collapse-1',
+		'menu_class'      => 'navbar-nav mr-auto',
+		'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
+		'walker'          => new WP_Bootstrap_Navwalker(),
+	) );
+	?>	
+	</div>
 </nav>
+
+
+
+
 
 	<div id="content" class="site-content">
