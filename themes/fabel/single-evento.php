@@ -18,7 +18,32 @@ get_header(); ?>
 <div class="container">
 	<div class="row">
 
-		<div class="col-12 col-md-4 col-xl-3 mt-5 order-1 order-sm-2 the-page section-menu">
+		
+		<div class="col-12 col-md-8 col-xl-9">
+				<div class="the-page mt-5 mb-5">
+					<?php get_template_part( 'template-parts/pageheader' ); ?>
+					<p><small><?php the_date(); ?></small></p>
+					<ul class="list-inline share-menu">
+						<li class="list-inline-item">
+							<a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>"><i class="fab fa-facebook-f"></i>
+							</a>
+						</li>
+						<li class="list-inline-item">
+							<a target="_blank" href="https://twitter.com/home?status=a<?php the_title(); echo ' - '; the_permalink(); ?>"><i class="fab fa-twitter"></i>
+							</a>
+						</li>
+					</ul>
+					<?php the_content() ?>
+
+					<!-- Galeria de Imagens -->
+					<?php $galeria = get_field('galeria');
+					if ($galeria): ?>
+						<?php get_template_part( 'template-parts/content', 'galeria' ); ?>
+					<?php endif ?>
+				</div>
+		</div>
+
+		<div class="col-12 col-md-4 col-xl-3 mt-5 the-page section-menu">
 			<?php get_sidebar('sidebar-adicional') ?>
 			<h3>Eventos Recentes</h3>
 			<?php 
@@ -41,30 +66,6 @@ get_header(); ?>
 					</div>
 				</div>
 			<?php endwhile; wp_reset_postdata(); endif; ?>
-		</div>
-		
-		<div class="col-12 col-md-8 col-xl-9 order-2 order-sm-1">
-				<div class="the-page mt-5 mb-5">
-					<?php get_template_part( 'template-parts/pageheader' ); ?>
-					<p><small><?php the_date(); ?></small></p>
-					<ul class="list-inline share-menu">
-						<li class="list-inline-item">
-							<a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>"><i class="fab fa-facebook-f"></i>
-							</a>
-						</li>
-						<li class="list-inline-item">
-							<a target="_blank" href="https://twitter.com/home?status=a<?php the_title(); echo ' - '; the_permalink(); ?>"><i class="fab fa-twitter"></i>
-							</a>
-						</li>
-					</ul>
-					<?php the_content() ?>
-
-					<!-- Galeria de Imagens -->
-					<?php $galeria = get_field('galeria');
-					if ($galeria): ?>
-						<?php get_template_part( 'template-parts/content', 'galeria' ); ?>
-					<?php endif ?>
-				</div>
 		</div>
 
 	</div>
