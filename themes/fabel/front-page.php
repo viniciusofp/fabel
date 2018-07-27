@@ -13,18 +13,33 @@
  */
 
 get_header(); ?>
+<div class="home-main">
+	<div class="container">
+		<div class="row the-page">
+			<div class="col-12">
+				<?php if ( is_active_sidebar( 'home-banner' ) ) : ?>
+					<?php dynamic_sidebar( 'home-banner' ); ?>
+				<?php endif; ?>
+			</div>
 
-<div class="container mt-3">
+
+
+			<?php get_template_part( 'template-parts/content', 'destaques' ); ?>
+
+		</div>
+	</div>
+</div>
+
+
+<div class="container mt-5 mb-5">
 	<div class="row the-page">
 		<div class="col-12 mb-3">
-			<?php get_template_part( 'template-parts/pageheader' ); ?>
+			<h1>Blog 	<a href="<?php home_url('/blog'); ?>"><button class="btn btn-light ml-2">Ver mais</button></a></h1>
 		</div>
 		<?php 
-		$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 		$args = array(
 			'post_type' => 'post',
 		  'posts_per_page' => 8,
-		  'paged'          => $paged
 		);
 		$the_query = new WP_Query( $args ); 
 		if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
@@ -42,34 +57,7 @@ get_header(); ?>
 			</div>
 
 		<?php endwhile; wp_reset_postdata(); ?>
-			<!-- pagination here -->
-			<div class="col-12">
-				<?php if (function_exists("pagination")) {
-		      pagination($the_query->max_num_pages);
-		    } ?>	
-			</div>
-			
 		<?php endif; ?>
 	</div>
 </div>
-<div class="home-main" style="background-color: #fff; padding-top: 0">
-	<div class="container mb-3">
-		<div class="row">
-
-			<?php 
-			$args = array(
-				'page_id' => 411,
-			);
-			$the_query = new WP_Query( $args ); 
-			if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-
-				<?php get_template_part( 'template-parts/content', 'destaques' ); ?>
-
-			<?php endwhile; wp_reset_postdata(); endif; ?>
-
-		</div>
-	</div>	
-</div>
-
-
 <?php get_footer();

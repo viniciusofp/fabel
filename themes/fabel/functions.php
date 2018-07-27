@@ -146,9 +146,18 @@ function fabel_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Social Media and Contact Footer' ),
 		'id'            => 'social-footer',
-		'description'   => esc_html__( 'Social media icons and Contact Info - Footer.', 'fabel' ),
+		'description'   => esc_html__( 'Social media icons and Contact Info - Footer', 'fabel' ),
 		'before_widget' => '<ul id="social-footer" class="widget %2$s">',
 		'after_widget'  => '</ul>',
+		'before_title'  => '<h2 class="d-none">',
+		'after_title'   => '</h2>',
+	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'Home Banner Superior' ),
+		'id'            => 'home-banner',
+		'description'   => esc_html__( 'Banner superior na página inicial', 'fabel' ),
+		'before_widget' => '<div id="home-banner" class="widget %2$s">',
+		'after_widget'  => '</div>',
 		'before_title'  => '<h2 class="d-none">',
 		'after_title'   => '</h2>',
 	) );

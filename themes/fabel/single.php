@@ -43,6 +43,12 @@ get_header(); ?>
 					if ($galeria): ?>
 						<?php get_template_part( 'template-parts/content', 'galeria' ); ?>
 					<?php endif ?>
+					<div class="mt-5">
+						<?php if ( is_active_sidebar( 'home-banner' ) ) : ?>
+							<?php dynamic_sidebar( 'home-banner' ); ?>
+						<?php endif; ?>
+					</div>
+
 				</div>
 		</div>
 
