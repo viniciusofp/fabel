@@ -52,6 +52,9 @@
 				<?php if ( is_active_sidebar( 'social-footer' ) ) : ?>
 					<?php dynamic_sidebar( 'social-footer' ); ?>
 				<?php endif; ?>
+				<?php if ( is_active_sidebar( 'contato-footer' ) ) : ?>
+					<?php dynamic_sidebar( 'contato-footer' ); ?>
+				<?php endif; ?>
 				<p class="mb-0"><small>Copyright © 2018 FABEL - Faculdade de Belém. Todos os direitos reservados. Design e desenvolvimento web por: <a target="_blank" href="https://viniciusofp.com.br">viniciusofp</a> | <a target="_blank" href="http://hineo.com.br/">Hineo Marketing</small></a></p>
 			</div>
 		</div>

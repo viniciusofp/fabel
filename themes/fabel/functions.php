@@ -144,11 +144,20 @@ function fabel_widgets_init() {
 		'after_title'   => '</h2>',
 	) );
 	register_sidebar( array(
-		'name'          => esc_html__( 'Social Media and Contact Footer' ),
+		'name'          => esc_html__( 'Social Media' ),
 		'id'            => 'social-footer',
-		'description'   => esc_html__( 'Social media icons and Contact Info - Footer', 'fabel' ),
+		'description'   => esc_html__( 'Social media icons - Footer', 'fabel' ),
 		'before_widget' => '<ul id="social-footer" class="widget %2$s">',
 		'after_widget'  => '</ul>',
+		'before_title'  => '<h2 class="d-none">',
+		'after_title'   => '</h2>',
+	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'Contact Footer' ),
+		'id'            => 'contato-footer',
+		'description'   => esc_html__( 'Informações de contato - Footer', 'fabel' ),
+		'before_widget' => '<div id="social-footer" class="widget %2$s">',
+		'after_widget'  => '</div>',
 		'before_title'  => '<h2 class="d-none">',
 		'after_title'   => '</h2>',
 	) );

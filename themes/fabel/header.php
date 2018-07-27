@@ -50,8 +50,12 @@
 <nav id="header-superior">
 	<div class="container">
 		<div class="row">
-
-			<div class="col-auto">
+			<div class="col-auto" style="padding-right: 0">
+				<?php if ( is_active_sidebar( 'social-footer' ) ) : ?>
+					<?php dynamic_sidebar( 'social-footer' ); ?>
+				<?php endif; ?>
+			</div>
+			<div class="col-auto d-none d-md-flex">
 				<?php wp_nav_menu( array( 'theme_location' => 'header-superior' ) ); ?>
 			</div>
 
