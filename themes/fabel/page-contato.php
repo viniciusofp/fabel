@@ -16,7 +16,7 @@ get_header(); ?>
 
 <div class="container mt-3">
 	<div class="row">
-		<div class="col-12 col-md-8 col-lg-9 mb-5">
+		<div class="col-12">
 			<?php while ( have_posts() ) : the_post(); ?>
 
 				
@@ -27,13 +27,8 @@ get_header(); ?>
 		</div>
 	</div>
 </div>
-<script>
-	var breadcrumbs = jQuery('#breadcrumb');
-	var section = jQuery('.section-menu h2.widget-title').html();
-	var title = jQuery('.bread-title').html();
-	var home = jQuery('.bread-home').html();
-	var sep = "<i class='fas fa-arrow-right'></i>"
+<div class="contato-mapa">
+	<iframe src="<?php the_field('mapa') ?>" width="100%" height="450" frameborder="0" style="border:0; margin-bottom: -6px;" allowfullscreen></iframe>
+</div>
 
-	breadcrumbs.empty().append(home + sep + section + sep + title);
-</script>
 <?php get_footer();

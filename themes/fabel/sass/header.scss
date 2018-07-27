@@ -30,39 +30,7 @@
 		}
 	}
 }
-#header-main {
-	background: $red;
-	a {
-		font-size: 17px;
-		color: white;
-		width: 100%;
-		padding-top: 15px;
-		padding-bottom: 15px;
-		display: inline-block;
-		border-top: 1px solid darken($red, 2%);
-		border-bottom: 1px solid darken($red, 2%);
-		box-shadow: inset 0px 0px 0px 0px darken($red, 5%);
-		&:hover {
-			box-shadow: inset 0px 57px 0px 0px darken($red, 5%);
-		}
-	}
-	.menu-header-principal-container {
-		@extend .container;
-		-webkit-padding-start: 0px;
-	}
-	ul {
-		@extend .row;
-		margin-bottom: 0;
-		li {
-			text-align: center;
-			@extend .col-6;
-			@extend .col-md-4;
-			@extend .col-lg;
-			list-style: none;
-			padding: 0;
-		}
-	}
-}
+
 #header-superior {
 	text-align: left;
 	background: #242424;
@@ -108,6 +76,9 @@
 	color: white;
 	padding-bottom: 0px;
   padding-top: 0px;
+  button.navbar-toggler {
+    border-color: transparent!important;
+	}
   * {
   	transition: .2s;
   }
@@ -116,6 +87,11 @@
 	}
 	.nav-item {
 
+			box-shadow: inset 0px 0px 0px 0px $red;
+			transition: .6s;
+			&:hover {
+				box-shadow: inset 0px 55px 0px 0px #00000015;
+			}
 	}
 	.nav-item.show {
 /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#960014+0,870012+100 */

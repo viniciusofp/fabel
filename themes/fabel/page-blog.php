@@ -37,7 +37,7 @@ get_header(); ?>
 				<?php endif ?>
 				<div class="meta">
 					<a href="<?php the_permalink(); ?>"><h2 class="title"><?php the_title(); ?></h2></a>
-					<p><?php the_excerpt(); ?> - <strong><a href="<?php the_permalink(); ?>">Leia Mais</a></strong></p>
+					<?php the_excerpt(); ?> - <strong><a href="<?php the_permalink(); ?>">Leia Mais</a></strong>
 				</div>
 			</div>
 

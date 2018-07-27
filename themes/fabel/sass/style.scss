@@ -60,7 +60,7 @@ $primary: $red;
 	max-width: 100vw;
 }
 :focus {
-	outline: 0;
+	outline: 0!important;
 }
 body {
 	font-size: 15px;
@@ -108,6 +108,9 @@ h1, h2, h3 {
 	background: #ececec;
 	border: 0;
 	margin-top: 10px;
+}
+textarea.wpcf7-form-control {
+    height: 100px;
 }
 .wpcf7-form-control {
 	@extend .form-control;

@@ -34,7 +34,7 @@ get_header(); ?>
 <div class="container mt-5 mb-5">
 	<div class="row the-page">
 		<div class="col-12 mb-3">
-			<h1>Blog 	<a href="<?php home_url('/blog'); ?>"><button class="btn btn-light ml-2">Ver mais</button></a></h1>
+			<h1>Blog 	<a href="<?php echo home_url('/blog'); ?>"><button class="btn btn-light ml-2">Ver mais</button></a></h1>
 		</div>
 		<?php 
 		$args = array(
