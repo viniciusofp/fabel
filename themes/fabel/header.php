@@ -50,14 +50,26 @@
 <nav id="header-superior">
 	<div class="container">
 		<div class="row">
-			<div class="col-12">
-				<?php wp_nav_menu( array( 'theme_location' => 'header-superior' ) ); ?>
 
+			<div class="col-auto">
+				<?php wp_nav_menu( array( 'theme_location' => 'header-superior' ) ); ?>
 			</div>
+
+			<div class="col-auto ml-auto ">
+				<?php get_search_form(); ?>
+			</div>
+
 		</div>
 	</div>
 </nav>
-<div class="header-image" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/header-bg.jpg')">
+<?php 
+if ( is_front_page() ) {
+	$headerClass = 'large';
+} else {
+	$headerClass = '';
+}
+?>
+<div class="header-image <?php echo $headerClass; ?>" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/header-bg.jpg')">
 	<a href="<?php echo home_url('/') ?>"><img src="<?php echo get_template_directory_uri(); ?>/img/header-logo.png" alt=""></a>
 </div>
 <!-- <nav id="header-main">
@@ -67,6 +79,10 @@
 <nav class="navbar navbar-expand-md navbar-dark navwalker-main container-fluid" role="navigation">
   <div class="container">
 	<!-- Brand and toggle get grouped for better mobile display -->
+
+<!-- 	<a class="navbar-brand" href="#" class="mr-5">
+		<img src="<?php echo get_template_directory_uri(); ?>/img/header-logo.png" alt="">
+	</a> -->
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
 	</button>

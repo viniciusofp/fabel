@@ -17,7 +17,7 @@ get_header(); ?>
 <div class="container mt-3">
 	<div class="row">
 		<div class="col-12 breadcrumbs mb-3">
-			<div id="breadcrumb"></div>
+			<div id="breadcrumb">Você está em:</div>
 		</div>
 		<div class="col-12 col-md-4 col-lg-3 order-2 order-md-1">
 			<div class="section-menu">
@@ -61,6 +61,12 @@ get_header(); ?>
 					if ($post->post_name == 'responsabilidade-social' ): ?>
 						<?php get_template_part( 'template-parts/content', 'projetos' ); ?>
 					<?php endif ?>
+					<!-- Projetos -->
+
+					<?php
+					if ($post->post_name == 'revista-ensinagem' ): ?>
+						<?php get_template_part( 'template-parts/content', 'revista' ); ?>
+					<?php endif ?>
 
 
 
@@ -76,6 +82,9 @@ get_header(); ?>
 	var home = jQuery('.bread-home').html();
 	var sep = "<i class='fas fa-arrow-right'></i>"
 
-	breadcrumbs.empty().append(home + sep + section + sep + title);
+	breadcrumbs.html('<span>Você está em:</span> ' + home + sep + section + sep + title);
+
+
+
 </script>
 <?php get_footer();

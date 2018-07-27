@@ -90,6 +90,29 @@ if ( ! function_exists( 'fabel_setup' ) ) :
 endif;
 add_action( 'after_setup_theme', 'fabel_setup' );
 
+
+// Define Eventos - Custom Post Type
+
+function create_post_type_events() {
+  register_post_type( 'evento',
+    array(
+      'labels' => array(
+        'name' => __( 'Eventos' ),
+        'singular_name' => __( 'Evento' )
+      ),
+      'public' => true,
+      'show_in_menu' => true,
+      'menu_position' => 5,
+      'has_archive' => true,
+      'show_in_rest' => true,
+			'menu_icon' => 'dashicons-calendar-alt',
+			'supports' => array('thumbnail', 'title', 'editor')
+    )
+  );
+}
+add_action( 'init', 'create_post_type_events' );
+
+
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *

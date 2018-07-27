@@ -18,10 +18,13 @@
 				padding: 10px;
 				transition: .1s;
 				&:hover {
-					background: $red;
+					background: $red!important;
 					color: #fff;
 				}
 			}
 		}
+	}
+	.current-menu-item a {
+		background: #ccc;
 	}
 }

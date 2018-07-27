@@ -2,19 +2,32 @@
 	position: relative;
 	background-size: cover;
 	background-position: center;
-	height: 200px;
+	height: 125px;
 	width: 100%;
+	&.large {
+		height: 250px;
+		img {
+			width: 333px;
+		}
+	}
 	img {
+		width: 260px;
 		position: absolute;
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
+		-webkit-transform: translate(-50%, -50%);
+		-moz-transform: translate(-50%, -50%);
+		-o-transform: translate(-50%, -50%);
 	}
 }
 @media all and (max-width: 767px) {
-	.header-image img {
-		width: 260px;
-		height: auto;
+	.header-image , .header-image.large {
+		height: 100px;
+		img {
+			width: 200px;
+			height: auto;	
+		}
 	}
 }
 #header-main {
@@ -80,10 +93,16 @@
 			list-style: none;
 		}
 	}
-	@media all and (max-width: 767px) {
+	@media all and (max-width: 991px) {
 		a {
-			padding: 5px;
-			font-size: 10px;
+			font-size: 13px;
+			padding-left: 6px;
+			padding-right: 6px;
+		}
+	}
+	@media all and (max-width: 767px) {
+		ul {
+			display: none;
 		}
 	}
 }
@@ -91,28 +110,79 @@
 .navwalker-main {
 	background: $red;
 	color: white;
-	padding-bottom: 2px;
-  padding-top: 2px;
+	padding-bottom: 0px;
+  padding-top: 0px;
+  * {
+  	transition: .2s;
+  }
 	.menu-item {
-		padding: 0 15px;
 		display: block;
 	}
-	a {
-		display: block;
-		padding: 15px 15px;
+	.nav-item {
+
+	}
+	.nav-item.show {
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#960014+0,870012+100 */
+background: rgb(150,0,20); /* Old browsers */
+background: -moz-linear-gradient(top, rgba(150,0,20,1) 0%, rgba(135,0,18,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, rgba(150,0,20,1) 0%,rgba(135,0,18,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, rgba(150,0,20,1) 0%,rgba(135,0,18,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#960014', endColorstr='#870012',GradientType=0 ); /* IE6-9 */
+	}
+	.active > a.nav-link {
+		font-weight: 700;
+		background: darken($red, 2%);
+	}
+	a.nav-link {
+		color: white!important;
+		padding: 15px 0px;
+		padding-left: 15px!important;
+		padding-right: 15px!important;
 	}
 	.dropdown-menu {
-		background: darken($red, 5%);
+		background: darken($red, 3%);
 		color: white;
 		border-radius: 0;
 		font-size: 14px;
+		margin: 0;
+		border: 0;
 		a {
 			color: white;
 			padding-top: 5px;
 			padding-bottom: 5px;
+			padding-left: 10px!important;
+			padding-right: 10px!important;
 		}
 		.dropdown-item:hover, .dropdown-item:focus {
 			background: #00000015;
 		}
+	}
+	.dropdown-toggle::after {
+	   color: darken($red, 10%);
+	   margin-left: 10px;
+	}
+}
+
+.search-form {
+	margin-top: 6px;
+	margin-bottom: 5px;
+	label {
+		margin-bottom: 0;
+	}
+	.search-field {
+		border: 0;
+		background: #202020;
+    padding: 4px 15px;
+    width: 160px;
+    &:focus {
+    	background: #292929;
+    }
+	}
+	.submit {
+		background: #303030;
+		color: #888;
+		padding: 4px 8px;
+		border: none;
+		margin-left: -5px;
 	}
 }

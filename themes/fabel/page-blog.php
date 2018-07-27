@@ -17,13 +17,13 @@ get_header(); ?>
 <div class="container mt-3">
 	<div class="row the-page">
 		<div class="col-12 mb-3">
-			<h1><?php the_title(); ?></h1>
+			<?php get_template_part( 'template-parts/pageheader' ); ?>
 		</div>
 		<?php 
 		$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 		$args = array(
 			'post_type' => 'post',
-		  'posts_per_page' => 1,
+		  'posts_per_page' => 8,
 		  'paged'          => $paged
 		);
 		$the_query = new WP_Query( $args ); 
