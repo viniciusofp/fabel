@@ -16,7 +16,7 @@ get_header(); ?>
 <div class="home-main">
 	<div class="container">
 		<div class="row the-page">
-			<div class="col-12">
+			<div class="col-12 animated fadeIn slow">
 				<?php if ( is_active_sidebar( 'home-banner' ) ) : ?>
 					<?php dynamic_sidebar( 'home-banner' ); ?>
 				<?php endif; ?>

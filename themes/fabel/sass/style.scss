@@ -115,3 +115,50 @@ textarea.wpcf7-form-control {
 .wpcf7-form-control {
 	@extend .form-control;
 }
+
+.error404 {
+	margin-bottom: 45px;
+	h1 {
+		font-size: 5rem;
+		color: $red;
+		line-height: 1;
+		margin-bottom: 30px;
+		small {
+			font-size: 1.5rem;
+			color: #888;
+			text-transform: uppercase;
+		}
+	}
+	.search-form {
+	margin-top: 6px;
+	margin-bottom: 5px;
+	label {
+		margin-bottom: 0;
+	}
+	.search-field {
+		border: 0;
+		background: #ccc;
+    padding: 4px 15px;
+    width: 140px;
+    font-size: 14px;
+    border: 2px solid #ccc;
+    border-right: 0;
+    transform: translateY(-1px);
+    &:focus {
+    	background: #fff;
+    	color: $red;
+    	text-transform: underline;
+    	border: 2px solid $red;
+   		border-right: 0;
+    }
+	}
+	.submit {
+		background: $red;
+		color: #fff;
+		padding: 4px 8px 3px;
+		border: none;
+		margin-left: -5px;
+    border: 2px solid $red;
+	}
+}
+}

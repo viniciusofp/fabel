@@ -1,4 +1,4 @@
-<div class="col-12 col-lg-8">
+<div class="col-12 col-lg-8 animated fadeInLeft">
 	<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
 
 		<ol class="carousel-indicators">
@@ -47,7 +47,7 @@
 	</div>
 </div>
 
-<div class="col-12 col-lg-4">
+<div class="col-12 col-lg-4 animated fadeInRight fast">
 	<div class="row">
 
 		<div class="col-12 col-sm-6 col-lg-12">

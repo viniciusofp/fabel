@@ -267,3 +267,28 @@ function custom_short_excerpt($excerpt){
 }
 
 add_filter('the_excerpt', 'custom_short_excerpt');
+
+
+// Change wp-login.php styles
+
+function my_login_logo() { ?>
+    <style type="text/css">
+        #login h1 a, .login h1 a {
+            background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/img/logo.png);
+		height:86.6px;
+		width:320px;
+		background-size: 320px 86.6px;
+		background-repeat: no-repeat;
+        	padding-bottom: 30px;
+        }
+        body.login { background-color: #990720; }
+        body.login div#login form#loginform p.submit input#wp-submit { background-color: #013263;  }
+        body.login div#login p#nav,
+				body.login div#login p#nav a,
+				body.login div#login p#backtoblog,
+				body.login div#login p#backtoblog a {
+					color: white;
+				}
+    </style>
+<?php }
+add_action( 'login_enqueue_scripts', 'my_login_logo' );
