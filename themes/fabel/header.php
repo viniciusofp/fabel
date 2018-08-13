@@ -80,7 +80,7 @@ if ( is_front_page() ) {
 	<?php wp_nav_menu( array( 'theme_location' => 'header-main' ) ); ?>
 </nav> -->
 
-<nav class="navbar navbar-expand-md navbar-dark navwalker-main container-fluid" role="navigation">
+<nav class="navbar navbar-expand-lg navbar-dark navwalker-main container-fluid" role="navigation">
   <div class="container">
 	<!-- Brand and toggle get grouped for better mobile display -->
 

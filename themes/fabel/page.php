@@ -40,6 +40,12 @@ get_header(); ?>
 						<?php get_template_part( 'template-parts/content', 'cursos' ); ?>
 					<?php elseif  ($post->post_name == 'avaliacao-institucional' ): ?>
 						<?php get_template_part( 'template-parts/content', 'avaliacao-institucional' ); ?>
+					<?php elseif  ($post->post_name == 'inscricao-em-processo-seletivo' ): ?>
+						<?php get_template_part( 'template-parts/content', 'inscricao-processo-seletivo' ); ?>
+					<?php elseif  ($post->post_name == 'ambiente-do-aluno' ): ?>
+						<?php get_template_part( 'template-parts/content', 'portal-aluno' ); ?>
+					<?php elseif  ($post->post_name == 'ambiente-do-professor' ): ?>
+						<?php get_template_part( 'template-parts/content', 'portal-professor' ); ?>
 					<?php else: ?>
 						<?php get_template_part( 'template-parts/content' ); ?>
 					<?php endif ?>

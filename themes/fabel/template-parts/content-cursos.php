@@ -29,9 +29,16 @@
     </div>
     <div id="<?php echo $slug ?>" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
       <div class="card-body">
-      	<p><small><?php echo $portaria ?></small></p>
-      	<h3>Objetivo</h3>
-        <?php echo $objetivo ?>
+      	
+      	<?php if ($portaria): ?>
+      		<p><small><?php echo $portaria ?></small></p>
+      	<?php endif ?>
+
+      	<?php if ($objetivo): ?>
+      		<h3>Objetivo</h3>
+        	<?php echo $objetivo ?>
+      	<?php endif ?>
+      	
       	<h3>Ementa</h3>
 				<button  class="ementa-button btn btn-primary mb-3" data-toggle="collapse" data-target="#<?php echo $slug . '-ementa' ?>">Exibir relação de disciplinas<i class="ml-2 fas fa-caret-down"></i></button>
 				<div id="<?php echo $slug . '-ementa' ?>" class="semestres collapse">
