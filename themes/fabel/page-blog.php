@@ -48,6 +48,10 @@ get_header(); ?>
 		      pagination($the_query->max_num_pages);
 		    } ?>	
 			</div>
+		<?php else: ?>
+			<div class="col-12">
+				<h3>Ainda não há posts no blog.</h3>
+			</div>
 			
 		<?php endif; ?>
 	</div>
